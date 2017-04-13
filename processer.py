@@ -11,11 +11,12 @@ import subprocess
 import clipboard
 import uploader
 from config import (
-    URI_PREFIX, ACCESS_KEY, SECRET_KEY, BUCKET_NAME
+    URI_PREFIX, ACCESS_KEY, SECRET_KEY, BUCKET_NAME,SCALE_RATE
 )
 
 
-IMG_TPL = '<img src=\"{}\" width=\"{}\" height=\"{}\" />'
+IMG_TPL = '![]({}?imageMogr2/thumbnail/!{}p)'
+
 
 
 CLIPBOARD_EXCEPTIONS = (
@@ -77,7 +78,7 @@ def process():
         return
 
     # markdown使用html格式,保证图片大小
-    markdown_img = IMG_TPL.format(img_uri, width, height)
+    markdown_img = IMG_TPL.format(img_uri,SCALE_RATE)
 
     # 写入剪贴板
     write_to_pasteboard(markdown_img)

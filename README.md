@@ -1,3 +1,11 @@
+# 来自屈定的修改:
+原插件返回为img标签,修改为返回markdown格式,增加等比缩放配置解决mac下的图片放大问题.
+七牛的API支持等比缩放的哈.
+
+示例:`![](http://oobu4m7ko.bkt.clouddn.com/1492056974.png?imageMogr2/thumbnail/!70p)
+`
+
+
 # 描述
 复制本地图片或截图，快速上传图片到七牛云空间，并获取Markdown格式的图片地址。
 
