@@ -58,7 +58,7 @@ def process():
         img_path = new_img_path
 
     # 获取图片尺寸
-    width, height = _get_img_size(img_path)
+    # width, height = _get_img_size(img_path)
 
     try:
         # 上传到七牛
@@ -78,7 +78,7 @@ def process():
         return
 
     # markdown使用html格式,保证图片大小
-    markdown_img = IMG_TPL.format(img_uri,SCALE_RATE)
+    markdown_img = IMG_TPL.format(img_uri, SCALE_RATE)
 
     # 写入剪贴板
     write_to_pasteboard(markdown_img)
