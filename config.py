@@ -15,3 +15,6 @@ BUCKET_NAME = ''
 # 图床域名
 # 参见：七牛 - 内容管理 - 外链域名
 URI_PREFIX = ''
+
+#缩放比率
+SCALE_RATE = 70
