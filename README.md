@@ -20,7 +20,7 @@
 
 # 使用
 
-- 下载[alfredworkflow](https://github.com/kaito-kidd/markdown-image-alfred/releases/download/1.1.2/markdown-image.alfredworkflow)文件，双击安装
+- 下载[alfredworkflow](https://github.com/kaito-kidd/markdown-image-alfred/releases/download/v1.1.3/Markdown.image.alfredworkflow)文件，双击安装
 - 复制本地一张图片(格式为：jpg、png、gif)，或截一张图
 - 打开任意编辑器，按下`option + command + v`快捷键
 - 自动插入上传后的图片链接
