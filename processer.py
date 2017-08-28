@@ -77,7 +77,9 @@ def process():
         notice('上传图片到七牛异常!{}'.format(str(error)))
         return
 
-    # markdown使用html格式,保证图片大小
+    if not img_uri.startswith('http://'):
+        img_uri = 'http://' + img_uri
+
     markdown_img = IMG_TPL.format(img_uri, SCALE_RATE)
 
     # 写入剪贴板
