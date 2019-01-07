@@ -6,14 +6,12 @@ __author__ = 'silverbulletkaito@gmail.com'
 
 import os
 import time
-import subprocess
 
 import clipboard
 import uploader
 from config import (
-    URI_PREFIX, ACCESS_KEY, SECRET_KEY, BUCKET_NAME,SCALE_RATE
+    URI_PREFIX, ACCESS_KEY, SECRET_KEY, BUCKET_NAME, SCALE_RATE
 )
-
 
 IMG_TPL = '![]({}?imageMogr2/thumbnail/!{}p)'
 
@@ -63,14 +61,14 @@ def process():
     try:
         # 上传到七牛
         upload_result = uploader.upload(
-            img_path, ACCESS_KEY, SECRET_KEY, BUCKET_NAME)
+            img_path, ACCESS_KEY, SECRET_KEY, BUCKET_NAME, URI_PREFIX)
         if not upload_result:
             notice('上传图片到七牛失败,请检查七牛相关配置是否正确!')
             return
 
+
         # 完整的七牛图片URI
-        img_file_name = os.path.split(img_path)[-1]
-        img_uri = '{}/{}'.format(URI_PREFIX, img_file_name)
+        img_uri = upload_result
 
         notice('上传成功!')
     except Exception as error:
