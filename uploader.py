@@ -21,8 +21,8 @@ def upload(path, access_key, secret_key, bucket_name, uri_prefix):
 
     # 上传到七牛后保存的文件名
     old_file_name = os.path.split(path)[-1]
-    prefix = old_file_name.split('.')[0]
-    key = old_file_name.replace(prefix, str(int(time.time())))
+    suffix = old_file_name.split('.')[-1]
+    key = '{}.{}'.format(int(time.time()), suffix)
 
     # 生成上传 Token，可以指定过期时间等
     token = auth.upload_token(bucket_name, key, 3600)
